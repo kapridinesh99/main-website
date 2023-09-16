@@ -12,27 +12,27 @@ function Footer() {
       </div>
       <ul className="menu">
         <li className="menu__item">
-          <a className="menu__link" href="#">
+          <a className="menu__link" href="/">
             Home
           </a>
         </li>
         <li className="menu__item">
-          <a className="menu__link" href="#">
+          <a className="menu__link" href="/about">
             About
           </a>
         </li>
         <li className="menu__item">
-          <a className="menu__link" href="#">
-            Services
+          <a className="menu__link" href="/term">
+            Terms & Conditions 
           </a>
         </li>
         <li className="menu__item">
-          <a className="menu__link" href="#">
-            Team
+          <a className="menu__link" href="/privacy-policy">
+            Privacy Policy
           </a>
         </li>
         <li className="menu__item">
-          <a className="menu__link" href="#">
+          <a className="menu__link" href="/contactus">
             Contact
           </a>
         </li>
