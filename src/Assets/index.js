@@ -11,6 +11,12 @@ import product1 from "./product-1.png"
 import product2 from "./product-2.png"
 import auBanner from "./au-1.png"
 import testBg from "./testImg.png";
+import p1 from "./1.png"
+import p2 from "./2.png"
+import p3 from "./3.png"
+import p4 from "./4.png"
+import p5 from "./5.png"
+import p6 from "./6.png"
 import footerImg from "./footer-wave.jpeg";
 
-export { banner1, banner2, banner3, banner4, banner5, testBg, footerImg, ss1, ss2, ss3, ss4, auBanner, product1, product2 };
+export { banner1, banner2, banner3, banner4, banner5, testBg, footerImg, ss1, ss2, ss3, ss4, auBanner, p1, p2, p3, p4, p5, p6 };

@@ -5,7 +5,7 @@
 
 .products-page .each-product-card {
     width: 300px;
-    height: 330px;
+    height: 400px;
     border: 1px solid #000;
 }
 
@@ -17,7 +17,7 @@
 
 .products-page .each-product-card main {
     color: #fff;
-    padding: 20px 50px;
+    padding: 20px 20px;
     height: -webkit-fill-available;
     background-color: #000;
 }

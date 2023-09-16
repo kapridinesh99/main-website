@@ -43,7 +43,7 @@ function Login() {
       <br /> <br />
       <div className='flex auth-page align-center justify-center'>
         <div className='auth-page-art relative w-1/2 h-full flex flex-col'>
-          <img src={COVER_IMG} alt='' className='w-full h-full object-cover' />
+          <img src={COVER_IMG} alt='' className='w-full h-full sm:block hidden object-cover' />
         </div>
         <div className='auth-form-wrapper bg-[#f5f5f5] justify-between '>
           <div className='flex column justify-center align-center'>
