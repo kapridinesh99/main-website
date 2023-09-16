@@ -1,7 +1,7 @@
 import { resourceService } from '../axios';
 import { getCredentials } from './util';
 
-const env = process.env.REACT_APP_BACKEND_ENV === 'dev' ? 'dev' : ''; 
+const env = process.env.REACT_APP_BACKEND_ENV === 'dev' ? 'dev' : 'dev'; 
 
 export const getUserProfile = async ({ userID }) => {
     const { data } = await resourceService.get(`${env}/user/details/${userID}`);

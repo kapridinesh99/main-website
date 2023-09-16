@@ -5,12 +5,20 @@ import AppLinks from "../Components/Home/AppLinks";
 import PageLinks from "../Components/Home/PageLinks";
 import Testimonials from "../Components/Home/Testminals";
 import Footer from "../Components/Footer";
+import React, { useState } from "react";
+import PreLoader from "../Components/PreLoader/preloader";
 
 function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <main>
       <Header />
       <Carousel />
+      <PreLoader isOpen={isModalOpen} closeModal={closeModal} />
       <br /> <br />
       <AppLinks />
       <br /> <br />
