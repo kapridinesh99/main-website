@@ -1,0 +1,60 @@
+.user-profile-tab {
+  /* width: 100vw; */
+  padding: 15px;
+}
+
+.user-profile-tab .user-details {
+  padding: 10px 20px;
+  background: #1e1e1e;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+}
+
+.user-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.userProfilePic {
+  max-width: 170px;
+  max-height: 400px;
+  height: auto;
+  width: 100%;
+}
+
+.referral-code-btn {
+  background: #2c2c2c !important;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.referral-code-btn:hover {
+  background: #575757 !important;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.user-id-btn {
+  background: #e38500 !important;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.user-id-btn:hover{
+  background: #575757 !important;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}

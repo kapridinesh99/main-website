@@ -1,0 +1,67 @@
+.transactions-page {
+    width: 100%;
+}
+
+.investment-card {
+    width: 250px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.balance-card {
+    width: 200px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.transactionTable h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.transactionTable .table-wrapper {
+    /* overflow: scroll; */
+    width: 100%;
+    /* height: clamp(500px, 100%, 700px); */
+    /* max-width: 1200px; */
+}
+
+.transactionTable .table-wrapper table {
+    background: rgba(0, 0, 0, 0.273);
+    color: #000;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: scroll;
+}
+
+.transactionTable .table-wrapper table thead {
+    position: sticky;
+    top: 0;
+}
+
+.transactionTable .table-wrapper table th {
+    background-color: #000;
+    color: #fff;
+}
+
+.transactionTable .table-wrapper table tr {
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+}
+
+.transactionTable .table-wrapper table td {
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 140px;
+}
+
+.transactionTable .table-wrapper tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.773);
+    color: #000;
+  }

@@ -1,0 +1,274 @@
+/* Animated Footer */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+html body {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.error-message {
+  width: 100%;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgb(238, 85, 85);
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: rgb(40, 40, 40);
+  min-height: 150px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 18vh;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+/* https://i.ibb.co/wQZVxxk/wave.png */
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("./Assets/footer-wave.jpeg");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+.success-message {
+  color: green;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+/* company plans */
+
+.company-plans {
+  max-width: 100vw;
+  /* overflow-x: hidden; */
+}
+
+/* header  */
+header.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+.loginPopup {
+  z-index: 9999;
+  transform: translateX(-80%);
+}
+/* 404 NOT-FOUND */
+
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #eeaa0f;
+  margin: 20px 0;
+  display: inline-block;
+  font-weight: bolder;
+  font-size: xx-large;
+  border-radius: 4px;
+}
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+.products-list {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.product-card {
+  padding: 10px;
+  text-align: left;
+  /* background-color: black; */
+}
+
+.product-card img {
+  border-radius: 20px;
+}
+.product-card h4 {
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+/* products-page */
+
+h1 {
+  color: #000;
+  text-align: center;
+  font-size: 2.4375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.download-pdf {
+  color: #fff;
+  margin-left: auto;
+  padding: 7px 18px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-color: #0078e8;
+}
+
+.company-plans-header {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.auth-page {
+  height: calc(100vh - 150px)
+}
+
+.auth-form-wrapper {
+  width: 50%;
+  padding: 20px 50px;
+  height: -webkit-fill-available;
+}
+
+.auth-form-wrapper form {
+  width: 100%;
+  margin: auto;
+}
+
+@media all and (max-width: 900px) {
+  .auth-page {
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: auto;
+    height: 100%;
+  }
+  
+  .auth-page-art {
+    height: 300px
+  }
+
+  .auth-form-wrapper {
+    width: 100%;
+    padding: 20px 20px;
+  }
+
+  .auth-page-art {
+    width: 100%;
+  }
+}

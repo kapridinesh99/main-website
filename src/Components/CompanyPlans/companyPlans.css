@@ -1,0 +1,51 @@
+.plansTable h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.transactionTable {
+    overflow: scroll;
+    height: 500px;
+}
+
+.plansTable .table-wrapper {
+    overflow: scroll;
+    height: 700px;
+    border: 1px solid #000;
+}
+
+.plansTable .table-wrapper table {
+    background: rgba(0, 0, 0, 0.273);
+    color: #000;
+    margin: auto;
+    width: 1300px;
+    /* height: 300px; */
+    border-collapse: collapse;
+    overflow: scroll;
+}
+
+
+.plansTable .table-wrapper table thead {
+    position: sticky;
+    top: 0;
+}
+
+.plansTable .table-wrapper table th {
+    background-color: #000;
+    color: #fff;
+}
+
+.plansTable .table-wrapper table tr {
+    border-bottom: 1px solid #ddd;
+    height: 80px;
+}
+
+.plansTable .table-wrapper table td {
+    font-size: 1.2rem;
+    min-width: 100px;
+}
+
+.plansTable .table-wrapper tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.773);
+    color: #000;
+  }

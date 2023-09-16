@@ -1,0 +1,1 @@
+export const defaultProfileUrl = 'https://img.icons8.com/3d-fluency/200/person-male--v3.png';

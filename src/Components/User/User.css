@@ -1,0 +1,45 @@
+.save-btn {
+    background: #4CAF50 !important;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.edit-btn {
+    background: #2c2c2c !important;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.noneditable-field {
+    border: none;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    color: #000;
+}
+
+.editable-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    color: #000;
+}
+
+.each-tab-content {
+    width: 100%;
+}
+
+.userName-text{
+    font-size: 24px;
+}

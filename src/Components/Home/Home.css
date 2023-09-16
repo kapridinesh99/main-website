@@ -1,0 +1,115 @@
+.certificate {
+  max-width: 600px;
+  max-height: 200px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.certificate span {
+  width: 100%;
+  width: 150px;
+}
+
+.appLinks {
+  background: #bd8b00;
+  max-width: 100vw;
+  /* height: 200px; */
+}
+
+.appLinks h3 {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.appLinks div:first-child {
+  margin-top: 30px;
+}
+
+/* Testmonials */
+
+.App {
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+  /* background-image: url("../../Assets/testImg.png");
+  background-size: auto;
+  background-position: center center; */
+}
+
+.carousel-items {
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.carousel-item {
+  margin: 0 5px;
+  transition: transform 0.3s ease-in-out; /* Adjust the timing function for a smoother transition */
+  flex: 0 0 20%;
+}
+
+.center {
+  transform: scale(1.8);
+  margin: 2rem;
+  opacity: none;
+}
+
+.opacity {
+  opacity: 0.2;
+}
+
+.end {
+  transform: scale(0.8);
+  /* margin: -15px; */
+}
+
+.appLinks img {
+  max-width: 100%;
+}
+
+.success-stories-banner {
+  width: 100vw;
+  height: 150px;
+  background: #121212;
+}
+.ss-class {
+  width: 50%;
+  margin: auto;
+}
+
+@media all and (max-width: 600px) {
+  .all-certificates,
+  .svg-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .opacity {
+    opacity: 0;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .appLinks,
+  .pageLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .opacity {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,65 @@
+.joinUsVideo {
+    margin: auto;
+}
+
+.each-feature {
+    max-width: 400px;
+    text-align: center;
+}
+
+.each-feature header {
+    height: 200px;
+}
+
+.each-feature main {
+    height: 150px;
+}
+
+.each-feature h3 {
+    font-weight: 700;
+} 
+
+.register {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register h3, .business h3 {
+    color: #000;
+    text-align: center;
+    font-size: 2.4375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.register img, .business img {
+    /* transform: translateX(60px); */
+    margin: auto;
+}
+
+.register-btn {
+    border-radius: 30px;
+    padding: 15px 30px;
+    border: 2px solid #000;
+}
+
+.business p {
+    margin: auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.pdfResources img {
+    max-width: 300px;
+}
+
+@media all and (max-width: 800px) {
+    .pdfResources, .features {
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
