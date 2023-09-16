@@ -48,7 +48,7 @@ const Transactions = ({ userProfileData }) => {
       allTransactions.push(...segregatedTransactions?.DIRECT_CREDIT);
       allTransactions.push(...segregatedTransactions?.COMMISION);
       allTransactions.push(...segregatedTransactions?.CASHBACK);
-      setTransactionsHistory([...allTransactions, ...allTransactions, ...allTransactions, ...allTransactions]);
+      setTransactionsHistory([...allTransactions]);
     });
   }, []);
 

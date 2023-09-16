@@ -7,7 +7,7 @@ const Privacy = () => {
     <div>
       <Header />
       <div className="max-w-4xl mx-auto">
-        <h3 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-xl dark:text-white">
+        <h3 className="mb-4 text-3xl font-extrabold leading-none tracking-tight dark:text-gray-900 md:text-2xl lg:text-xl text-white">
           Real Value Privacy Policies
         </h3>
         <p className="text-justify">
@@ -48,7 +48,7 @@ const Privacy = () => {
         <br></br>
         <br></br>
 
-        <h4 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-xl dark:text-white">
+        <h4 className="mb-4 text-3xl font-extrabold leading-none tracking-tight dark:text-gray-900 md:text-2xl lg:text-xl text-white">
           Privacy Policies
         </h4>
         <p className="text-justify">
@@ -68,7 +68,7 @@ const Privacy = () => {
         <br></br>
         <br></br>
 
-        <p className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-xl dark:text-white">
+        <p className="mb-4 text-3xl font-extrabold leading-none tracking-tight dark:text-gray-900 md:text-2xl lg:text-xl text-white">
           Third Party Privacy Policies
         </p>
         <p className="text-justify">
@@ -84,7 +84,7 @@ const Privacy = () => {
 
         <br></br>
         <br></br>
-        <p className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-xl dark:text-white">
+        <p className="mb-4 text-3xl font-extrabold leading-none tracking-tight dark:text-gray-900 md:text-2xl lg:text-xl text-white">
           Children's Information
         </p>
         <p className="text-justify">
