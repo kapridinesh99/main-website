@@ -25,7 +25,7 @@ const initialImages = [
 ];
 
 const Testmonials = () => {
-  const [images, setImages] = useState(initialImages);
+  const [images] = useState(initialImages);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
