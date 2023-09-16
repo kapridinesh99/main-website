@@ -6,7 +6,7 @@ function About() {
     return (
         <article className='about-wrapper'>
             <div className='about-img'>
-                <img className='au-banner' src={auBanner} />
+                <img className='au-banner' src={auBanner} alt='Logo' />
             </div>
             <div className='about-section'>
                 <h2>About RV Enterprises</h2>
