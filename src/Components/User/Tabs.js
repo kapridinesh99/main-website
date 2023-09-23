@@ -1,21 +1,23 @@
 import { useEffect, useRef } from 'react';
 import Transactions from './Transactions';
 import BasicDetails from './BasicDetails';
-import './Tabs.css'
+import KycDetails from './KycDetails';
+import './Tabs.css';
+import ChangePassword from './ChangePassword';
 
-const Tabs = ({ userProfileData, isLoading, isError, error }) => {
+const Tabsa = ({ userProfileData, isLoading, isError, error }) => {
   const tabsHeader = useRef(null);
   const tabsContent = useRef(null);
   const tabIndicator = useRef(null);
 
-  useEffect(()=> {    
+  useEffect(() => {
     let tabPanes = tabsHeader.current.getElementsByTagName("div");
-    
-    for(let i = 0; i < tabPanes.length; i++) {
-      tabPanes[i].addEventListener("click", function(){
+
+    for (let i = 0; i < tabPanes.length; i++) {
+      tabPanes[i].addEventListener("click", function () {
         tabsHeader.current.getElementsByClassName("active")[0].classList.remove("active");
         tabPanes[i].classList.add("active");
-        tabIndicator.current.style.top = `calc(80px + ${i*50}px)`;
+        tabIndicator.current.style.top = `calc(80px + ${i * 50}px)`;
         tabsContent.current.getElementsByClassName("active")[0].classList.remove("active");
         tabsContent.current.children[i].classList.add("active");
       });
@@ -32,6 +34,12 @@ const Tabs = ({ userProfileData, isLoading, isError, error }) => {
           <div>
               Transactions
           </div>
+          <div>
+              KYC Verification
+          </div>
+          <div>
+              Change Password
+          </div>
         </div>
         <div ref={tabIndicator} className="tab-indicator"></div>
         <div ref={tabsContent} className="tab-content">
@@ -41,10 +49,16 @@ const Tabs = ({ userProfileData, isLoading, isError, error }) => {
           <div className='each-tab-content'>
             <Transactions {...{ userProfileData }} />
           </div>
+          <div className='each-tab-content'>
+            <KycDetails {...{ userProfileData }} />
+          </div>
+          <div className='each-tab-content'>
+            <ChangePassword {...{ userProfileData }} />
+          </div>
         </div>
       </div>
     </section>
   )
 };
 
-export default Tabs;
+export default Tabsa;

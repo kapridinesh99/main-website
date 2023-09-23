@@ -1,7 +1,7 @@
 import { authService } from '../axios';
 import { getCredentials } from './util';
 
-const env = process.env.REACT_APP_BACKEND_ENV === 'dev' ? 'dev' : 'dev'; 
+const env = process.env.REACT_APP_BACKEND_ENV === 'dev' ? 'dev' : ''; 
 
 export function decodeJWT(token) {
     const payloadString = token.split('.')[1];

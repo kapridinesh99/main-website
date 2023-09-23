@@ -4,59 +4,70 @@ import { getUserTransactions } from '../../../Functions/user';
 import TransactionTable from './TransactionTable';
 import './Transactions.css';
 
-const InitialInvestment = ({ transactionsData = {} }) => {
+const TotalBalance = ({ transactionsData = {} }) => {
   const { total_balance = 0 } = transactionsData || {};
   return (
-    <article className='flex align-center gap-l balance-card'>
+    <article className='flex align-center gap-l trx-card'>
       <b>Total Balance: </b>₹ {total_balance}
     </article>
   )
 };
 
-const TotalBalance = ({ transactionsData={} }) => {
+const InitialInvestment = ({ transactionsData={} }) => {
   const { initial_investment = 0 } = transactionsData || {};
   return (
-    <article className='flex align-center gap-l investment-card'>
+    <article className='flex align-center gap-l trx-card'>
       <b>Initial Investment: </b>₹ { initial_investment }
     </article>
   )
 };
 
+const TDS = ({ transactionsData={} }) => {
+  const { initial_investment = 0 } = transactionsData || {};
+  return (
+    <article className='flex align-center gap-l trx-card'>
+      <b>TDS: </b>₹ { initial_investment * 0.05 }
+    </article>
+  );
+};
+
+
+const AdminCharges = ({ transactionsData={} }) => {
+  const { initial_investment = 0 } = transactionsData || {};
+  return (
+    <article className='flex align-center gap-l trx-card'>
+      <b>Admin Charges: </b>₹ { initial_investment * 0.05 }
+    </article>
+  );
+};
+
 const Transactions = ({ userProfileData }) => {
   const [transactionsData, setTransactionsData] = useState(null);
   const [transactionsHistory, setTransactionsHistory] = useState([]);
-  // const transactionHistoryMutation = useMutation(getUserTransactions);
 
-  // const { isLoading, isError, error } = useQuery(
-  //   ['getTransactionHistory'],
-  //   {
-  //     queryFn: () => {
-  //       console.log({ userId })
-  //       transactionHistoryMutation({ userId })
-  //     },
-  //     onSuccess: (data=null) => {
-  //       console.log({ transactionsData: data })
-  //     }
-  //   }
-  // );
   useEffect(() => {
     getUserTransactions()
     .then(({ result={} }) => {
-      setTransactionsData(result);
-      const segregatedTransactions = result?.all_transaction;
+      setTransactionsData({ ...result, TDS: 0, admin_charges: 0 });
       const allTransactions = [];
-      allTransactions.push(...segregatedTransactions?.DIRECT_CREDIT);
-      allTransactions.push(...segregatedTransactions?.COMMISION);
-      allTransactions.push(...segregatedTransactions?.CASHBACK);
-      setTransactionsHistory([...allTransactions]);
+      const direct = result?.all_transaction?.DIRECT_CREDIT;
+      const commission = result?.all_transaction?.COMMISSION;
+      const cashback = result?.all_transaction?.CASHBACK;
+      allTransactions.push(...direct);
+      allTransactions.push(...commission);
+      allTransactions.push(...cashback);
+      setTransactionsHistory([ ...allTransactions ]);
     });
   }, []);
 
+
   return (
     <article className='transactions-page'>
-      <div className='flex gap-5xl align-center'>
+      <div className='flex gap-5xl align-center transaction-cards-wrapper'>
+        <TDS transactionsData={transactionsData} />
         <InitialInvestment transactionsData={transactionsData} />
         <TotalBalance transactionsData={transactionsData} />
+        <AdminCharges transactionsData={transactionsData} />
       </div>
       <br />
       <hr />

@@ -2,22 +2,16 @@
     width: 100%;
 }
 
-.investment-card {
-    width: 250px;
-    height: 80px;
+.trx-card {
+    width: 100%;
+    width: 300px;
+    height: 60px;
     border: 1px solid #000;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-}
-
-.balance-card {
-    width: 200px;
-    height: 80px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+    background-color: #6a6a6a;
+    color: #fff;
 }
 
 .transactionTable h2 {
@@ -64,4 +58,9 @@
 .transactionTable .table-wrapper tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.773);
     color: #000;
-  }
+}
+
+.transaction-cards-wrapper {
+    max-width: 100%;
+    overflow-x: scroll;
+}

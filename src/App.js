@@ -1,4 +1,4 @@
-import { RecoilRoot } from "recoil";
+import { RecoilRoot } from 'recoil';
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import "./App.css";
@@ -10,10 +10,10 @@ import FuturePlans from "./Pages/FuturePlans";
 import ContactUs from "./Pages/ContactUs";
 import Login from "./Pages/Login";
 import NF404 from "./Pages/404";
-import Products from "./Pages/Products";
-import User from "./Pages/User";
-import Term from "./Pages/Terms";
-import Privacy from "../src/Pages/Privacy";
+import Products from './Pages/Products';
+import User from './Pages/User';
+import Term from './Pages/Terms';
+import Privacy from '../src/Pages/Privacy'
 
 function App() {
   return (
@@ -29,10 +29,10 @@ function App() {
           <Route path="/companyplans" element={<CompanyPlans />} />
           <Route path="/futureplans" element={<FuturePlans />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/user" element={<User />} />
+          <Route path='/user' element={<User />} />
           <Route path="/404" element={<NF404 />} />
-          <Route path="/term" element={<Term />} />
-          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path='/term' element={<Term />} />
+          <Route path='/privacy-policy' element={<Privacy />} />
         </Routes>
       </RecoilRoot>
     </div>
@@ -40,3 +40,5 @@ function App() {
 }
 
 export default App;
+
+

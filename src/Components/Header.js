@@ -244,11 +244,12 @@ export default function Header() {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   Company Plans
                 </Link> */}
-                <Link
+                {
+                  userID ? <Link
                   to="/user"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                   My Profile
-                </Link>
+                </Link> : null}
                 <Link
                   to="/joinus"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">

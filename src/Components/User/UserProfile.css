@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-.referral-code-btn {
+.user-id-btn {
   background: #2c2c2c !important;
   color: white;
   padding: 10px 20px;
@@ -32,7 +32,7 @@
   font-size: 16px;
 }
 
-.referral-code-btn:hover {
+ .user-id-btn:hover {
   background: #575757 !important;
   color: #fff;
   padding: 10px 20px;
@@ -41,7 +41,7 @@
   font-size: 16px;
 }
 
-.user-id-btn {
+.referral-code-btn {
   background: #e38500 !important;
   color: white;
   padding: 10px 20px;
@@ -50,7 +50,7 @@
   font-size: 16px;
 }
 
-.user-id-btn:hover{
+.referral-code-btn:hover {
   background: #575757 !important;
   color: #fff;
   padding: 10px 20px;

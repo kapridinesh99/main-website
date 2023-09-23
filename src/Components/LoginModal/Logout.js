@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../State/AuthProvider';
+import { defaultProfileUrl } from '../../Functions/constants';
 
 const LogoutCard = () => {
     const { logoutMutation } = useAuth();
@@ -12,11 +13,11 @@ const LogoutCard = () => {
     return (
       <article className='logoutCard'>
         <header className='flex align-center gap-4xl'>
-          <img className='userDP' src={user.profileUrl} alt={user.name} />
+          <img className='userDP' src={defaultProfileUrl} alt={user.name} />
           <div className='flex column gap-l'>
             <span> {user.name} </span>
             <Link to='/user'>
-              <u>View Profile</u>
+              <u>view profile</u>
             </Link>
           </div>
         </header>

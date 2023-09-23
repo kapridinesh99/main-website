@@ -32,7 +32,7 @@ function User() {
     const { userID } = getCredentials();
     getUserProfileMutation.mutate({ userID }, {
       onSuccess: ({ user_data }) => {
-        setUserProfileData({ ...user_data });
+        setUserProfileData({ ...user_data, userId: userID });
       }
     })
   }, []);

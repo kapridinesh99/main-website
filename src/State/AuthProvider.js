@@ -23,33 +23,37 @@ export function AuthProvider({ children }) {
     const signupMutation = useMutation(register);
     const requestPasswordResetMutation = useMutation(requestPasswordReset);
     useEffect(() => {
-        function interceptResponseService() {
-            resourceService.interceptors.request.use(function(config) {
-                const { userToken, userID } = getCredentials();
-                if (!userToken || !userID) {
-                    clearCredentials();
-                    redirect('/login');
-                    throw new axios.Cancel('Auth token absent');
-                }
-                config.headers.Authorization = `Bearer ${userToken}`;
-                return config;
-            }, function(error) {
-                return Promise.reject(error);
-            });
-            const interceptor = resourceService.interceptors.response.use(
-                response => response, 
-                function(error) {
-                    if (error?.response?.status !== 400) {
-                        return Promise.reject(error);
+        try {
+            function interceptResponseService() {
+                resourceService.interceptors.request.use(function(config) {
+                    const { userToken, userID } = getCredentials();
+                    if (!userToken || !userID) {
+                        clearCredentials();
+                        redirect('/login');
+                        throw new axios.Cancel('Auth token absent');
                     }
-    
-                    resourceService.interceptors.response.eject(interceptor);
-                    
-                    redirect('/login');
+                    config.headers.Authorization = `Bearer ${userToken}`;
+                    return config;
+                }, function(error) {
+                    return Promise.reject(error);
+                });
+                const interceptor = resourceService.interceptors.response.use(
+                    response => response, 
+                    function(error) {
+                        if (error?.response?.status !== 400) {
+                            return Promise.reject(error);
+                        }
+                        
+                        resourceService.interceptors.response.eject(interceptor);
+                        
+                        redirect('/login');
+                    }
+                    );
                 }
-            );
-        }
-        interceptResponseService();
+                interceptResponseService();
+            } catch (error) {
+                console.log({ error });
+            }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
