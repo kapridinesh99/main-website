@@ -3,6 +3,7 @@ import { useMutation, useQuery } from 'react-query';
 import { getUserTransactions } from '../../../Functions/user';
 import TransactionTable from './TransactionTable';
 import './Transactions.css';
+import { calcAdditionalCharges } from '../util';
 
 const TotalBalance = ({ transactionsData = {} }) => {
   const { total_balance = 0 } = transactionsData || {};
@@ -23,10 +24,11 @@ const InitialInvestment = ({ transactionsData={} }) => {
 };
 
 const TDS = ({ transactionsData={} }) => {
+  console.log({ transactionsData })
   const { initial_investment = 0 } = transactionsData || {};
   return (
     <article className='flex align-center gap-l trx-card'>
-      <b>TDS: </b>₹ { initial_investment * 0.05 }
+      <b>TDS: </b>₹ { calcAdditionalCharges(initial_investment) }
     </article>
   );
 };
@@ -36,7 +38,7 @@ const AdminCharges = ({ transactionsData={} }) => {
   const { initial_investment = 0 } = transactionsData || {};
   return (
     <article className='flex align-center gap-l trx-card'>
-      <b>Admin Charges: </b>₹ { initial_investment * 0.05 }
+      <b>Admin Charges: </b>₹ { calcAdditionalCharges(initial_investment) }
     </article>
   );
 };
@@ -63,20 +65,24 @@ const Transactions = ({ userProfileData }) => {
 
   return (
     <article className='transactions-page'>
-      <div className='flex gap-5xl align-center transaction-cards-wrapper'>
-        <TDS transactionsData={transactionsData} />
-        <InitialInvestment transactionsData={transactionsData} />
-        <TotalBalance transactionsData={transactionsData} />
-        <AdminCharges transactionsData={transactionsData} />
-      </div>
+      <header>
+        <h1>Financial Details</h1>
+        <br />
+        <div className='flex gap-5xl align-center transaction-cards-wrapper'>
+          <TDS transactionsData={transactionsData} />
+          <InitialInvestment transactionsData={transactionsData} />
+          <TotalBalance transactionsData={transactionsData} />
+          <AdminCharges transactionsData={transactionsData} />
+        </div>
+      </header>
       <br />
       <hr />
       <br /> 
-      <div>
-        <h2>Transaction History</h2>
+      <main>
+        <h1>Transaction History</h1>
         <br />
         <TransactionTable transactionRecords={transactionsHistory} />
-      </div>
+      </main>
     </article>
   )
 }

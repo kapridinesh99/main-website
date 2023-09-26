@@ -8,6 +8,7 @@ import { verifyAuth } from '../Functions/auth';
 import { getUserProfile } from '../Functions/user'
 import UserProfile from '../Components/User/UserProfile';
 import { getCredentials } from '../Functions/util';
+import '../Components/User/User.css';
 
 function User() {
   const navigate = useNavigate();
@@ -38,12 +39,12 @@ function User() {
   }, []);
 
   return (
-    <>
+    <div className='user-page'>
       <Header />
       <UserProfile {...{ userProfileData, isLoading, isError, error }} />
       <Tabs {...{ userProfileData, isLoading, isError, error }} />
       <Footer />
-    </>
+    </div>
   )
 }
 

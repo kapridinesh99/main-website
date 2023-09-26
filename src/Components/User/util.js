@@ -27,3 +27,17 @@ export const kycBlackListedFields = [
 ];
 
 export const kycEditableFields = [ 'pan_number', 'aadhar_number' ];
+
+export const calcAdditionalCharges = (val) => {
+    return val === 4900 
+        ? 24.50
+        : val === 15900
+            ? 79.50
+            : val === 30000
+                ? 135
+                : val === 55000
+                    ? 247
+                    : val === 115000
+                        ? 479
+                        : null
+};

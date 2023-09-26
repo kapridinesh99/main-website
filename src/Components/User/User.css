@@ -1,3 +1,7 @@
+.user-page {
+    background: linear-gradient(to bottom, #f5d671 0%, #fff 50%, #fff 100%);
+}
+
 .save-btn {
     background: #4CAF50 !important;
     color: white;
@@ -24,6 +28,17 @@
     width: 100%;
     font-size: 16px;
     color: #000;
+    text-align: left;
+}
+
+.user-profile-field {
+    margin: auto;
+    width: -webkit-fill-available;
+}
+
+.user-profile-field b {
+    width: clamp(130px, 200px, 300px);
+    text-align: left;
 }
 
 .editable-input {
@@ -42,4 +57,27 @@
 
 .userName-text{
     font-size: 24px;
+}
+
+.basic-details header,
+.change-password-page header,
+.kyc-details header {
+    text-align: left;
+}
+
+.basic-details header h1,
+.change-password-page header h1,
+.kyc-details header h1,
+.transactions-page h1 {
+    text-align: left;
+    font-size: 2.3em;
+    font-weight: 600;
+}
+
+.basic-details header p, 
+.change-password-page header p,
+.kyc-details header p {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 400;
 }

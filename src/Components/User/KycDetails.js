@@ -85,20 +85,31 @@ function KycDetails({ userProfileData, isLoading }) {
         <article className='flex column gap-l'>
             {isLoading
                 ? <Loader />
-                : Object.entries(formState.formData ?? {})
-                    .map((entry, index) => (entry &&
-                        <EachField
-                            key={index}
-                            {...{
-                                entry,
-                                editableFields: kycEditableFields,
-                                blackListedFields: kycBlackListedFields,
-                                onChange: handleEditField,
-                                isEditable: formState.isEditable
-                            }} />
-                    ))}
+                : (
+                    <article className='kyc-details'>
+                        <header>
+                            <h1>KYC Information</h1>
+                            <p>Update your KYC-Information here</p>
+                        </header>
+                        <br /> <br />
+                        <main className='flex column gap-xl'>
+                            {Object.entries(formState.formData ?? {})
+                                .map((entry, index) => (entry &&
+                                    <EachField
+                                        key={index}
+                                        {...{
+                                            entry,
+                                            editableFields: kycEditableFields,
+                                            blackListedFields: kycBlackListedFields,
+                                            onChange: handleEditField,
+                                            isEditable: formState.isEditable
+                                        }} />
+                                ))}
+                        </main>
+                    </article>
+                )}
             <br />
-            <div className='flex align-center space-between'>
+            <footer className='flex align-center gap-5xl'>
                 {
                     !userProfileData?.is_kyc_verified &&
                     <button className='edit-btn' onClick={enableEdit}>{formState.isEditable ? 'Revert' : 'Edit'}</button>
@@ -107,7 +118,7 @@ function KycDetails({ userProfileData, isLoading }) {
                     ? <Loader />
                     : formState.isEditable && (<button type='submit' className='save-btn' onClick={saveDetails}>Save</button>)
                 }
-            </div>
+            </footer>
         </article>
     )
 }

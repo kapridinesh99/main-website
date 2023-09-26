@@ -5,19 +5,19 @@
 
 .products-page .each-product-card {
     width: 300px;
-    height: 400px;
+    height: 330px;
     border: 1px solid #000;
 }
 
 .products-page .each-product-card img {
     border-radius: 0;
     /* padding: 5px; */
-    width: calc(100%);
+    width: calc(100% -20px);
 }
 
 .products-page .each-product-card main {
     color: #fff;
-    padding: 20px 20px;
+    padding: 20px 50px;
     height: -webkit-fill-available;
     background-color: #000;
 }

@@ -13,7 +13,7 @@ function UserProfile({ userProfileData, isLoading }) {
 
   return (
     <article className='user-profile-tab justify-center flex gap-l'>
-      <img className='userProfilePic' src={defaultProfileUrl} alt='' />
+      {/* <img className='userProfilePic' src={defaultProfileUrl} alt='' /> */}
       <div className="user-details flex flex-wrap align-center justify-between mb-2">
         {
           isLoading ? <Loader className='flex justify-center align-center' size={14} /> :

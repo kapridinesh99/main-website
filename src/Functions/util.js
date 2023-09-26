@@ -18,20 +18,18 @@ export const EachField = ({ entry, onChange, editableFields, blackListedFields, 
     return (!blackListedFields.includes(key) && key) ? (
         <div className='user-profile-field flex align-center gap-5xl'>
             <b>{fieldName}</b>
-            <div>
                 {editableFields.includes(key)
-                    ? (
-                        isEditable ? (
-                            <input
-                            id={key} 
-                            name={key} 
-                            {...{ value }} 
-                            className='editable-input' 
-                            onChange={(e) => onChange({ key, value: e.target.value })} />
-                        ) : (<div className='noneditable-field'>{formattedValue}</div>)
-                    )
-                    : (<div className='noneditable-field'>{formattedValue}</div> || 'N/A')}
-            </div>
+                ? ( isEditable ? (
+                    // <div>
+                        <input
+                        id={key} 
+                        name={key} 
+                        {...{ value }} 
+                        className='editable-input' 
+                        onChange={(e) => onChange({ key, value: e.target.value })} />
+                    // </div>
+                    ) : (<div className='noneditable-field'>{formattedValue}</div>)
+                ) : (<div className='noneditable-field'>{formattedValue}</div> || 'N/A')}
         </div>
     ) : null;
 };
@@ -48,10 +46,10 @@ export const convertTimestamp = (timestamp) => {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      timeZone: 'UTC'
+    //   hour: 'numeric',
+    //   minute: 'numeric',
+    //   second: 'numeric',
+    //   timeZone: 'UTC'
     };
     return date.toLocaleString('en-US', options);
   }

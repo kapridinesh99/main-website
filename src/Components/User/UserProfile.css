@@ -1,10 +1,10 @@
 .user-profile-tab {
   /* width: 100vw; */
-  padding: 15px;
+  /* padding: 15px; */
 }
 
 .user-profile-tab .user-details {
-  padding: 10px 20px;
+  padding: 2em;
   background: #1e1e1e;
   color: #fff;
   width: 100%;
@@ -16,13 +16,6 @@
   font-weight: 600;
 }
 
-.userProfilePic {
-  max-width: 170px;
-  max-height: 400px;
-  height: auto;
-  width: 100%;
-}
-
 .user-id-btn {
   background: #2c2c2c !important;
   color: white;
@@ -30,6 +23,7 @@
   text-align: center;
   border-radius: 10px;
   font-size: 16px;
+  margin: auto;
 }
 
  .user-id-btn:hover {
@@ -57,4 +51,12 @@
   text-align: center;
   border-radius: 10px;
   font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .user-details {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em
+  }
 }

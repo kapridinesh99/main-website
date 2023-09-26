@@ -1,32 +1,20 @@
 import './Products.css'
-import { p1, p2, p3 , p4 ,p5, p6 } from "../../Assets/index";
+import { product1, product2 } from "../../Assets/index";
 const productData = [
-  {
-    title: 'Pink Flower Crockery set.',
-    imgUrl: p1,
-  },
-  {
-    title: 'Cyan Flower Crockery set.',
-    imgUrl: p2,
-  },
-  {
-    title: 'Aqua Flower Crockery set.',
-    imgUrl: p3,
-  },
-  {
-    title: 'Dark and White Crockery set.',
-    imgUrl: p4,
-  },
-  {
-    title: 'Golden strip Crockery set.',
-    imgUrl: p5,
-  },
-  {
-    title: 'Golden Premium Crockery set.',
-    imgUrl: p6,
-  }
+    {
+      title: 'Real value premium golden print dinner set 72 pcs',
+      imgUrl: product2,
+    },
+    {
+      title: 'Real value golden line dinner set 72 pcs',
+      imgUrl: product2,
+    },
+    {
+      title: 'Real value premium golden printed tea souccer set 27 pcs',
+      imgUrl: product2,
+    }
 ];
-
+  
 function ProductsList() {
   return (
     <div className='products-page flex space-evenly align-center flex-wrap gap-5xl'>

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./preloader.css"
-function Modal({ isOpen, closeModal }) {
+
+function Preloader({ isOpen, closeModal }) {
   const [showModal, setShowModal] = useState(false);
 
   // Use useEffect to show the modal when the user comes to the Home screen
@@ -110,4 +111,4 @@ function Modal({ isOpen, closeModal }) {
   );
 }
 
-export default Modal;
+export default Preloader;
