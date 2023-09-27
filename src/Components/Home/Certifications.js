@@ -1,5 +1,5 @@
-import React from "react";
 import "./Home.css";
+import { Link } from 'react-router-dom';
 
 function Certifications() {
   return (
@@ -14,11 +14,11 @@ function Certifications() {
         <img width={50} src="/isoCertified.svg" alt="iso Certified" />
         <span>ISO Certified</span>
       </div>
-      <div
+      <Link to='/contactus'
         className={`flex gap-l align-center hover:bg-yellow-100 cursor-pointer certificate`}>
         <img width={50} src="/feedback.svg" alt="feedback" />
         <span>Feedback/ Complaints</span>
-      </div>
+      </Link>
     </section>
   );
 }

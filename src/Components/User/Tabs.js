@@ -1,64 +1,54 @@
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
+import { Tab } from '@headlessui/react'
+import KycDetails from './KycDetails';
 import Transactions from './Transactions';
 import BasicDetails from './BasicDetails';
-import KycDetails from './KycDetails';
-import './Tabs.css';
 import ChangePassword from './ChangePassword';
+import './Tabs.css';
 
 const Tabsa = ({ userProfileData, isLoading, isError, error }) => {
-  const tabsHeader = useRef(null);
-  const tabsContent = useRef(null);
-  const tabIndicator = useRef(null);
+  const [selectedTab, setSelectedTab] = useState(0);
+  const handleTabSwitch = d => setSelectedTab(d);
 
-  useEffect(() => {
-    let tabPanes = tabsHeader.current.getElementsByTagName("div");
-
-    for (let i = 0; i < tabPanes.length; i++) {
-      tabPanes[i].addEventListener("click", function () {
-        tabsHeader.current.getElementsByClassName("active")[0].classList.remove("active");
-        tabPanes[i].classList.add("active");
-        tabIndicator.current.style.top = `calc(80px + ${i * 50}px)`;
-        tabsContent.current.getElementsByClassName("active")[0].classList.remove("active");
-        tabsContent.current.children[i].classList.add("active");
-      });
-    };
-  }, []);
+  const userProfileSections = [
+    {
+      tab: 'Basic Details',
+      component: <BasicDetails {...{ userProfileData, isLoading, isError, error }} />,
+    },
+    {
+      tab: 'Transactions',
+      component: <Transactions {...{ userProfileData }} />,
+    },
+    {
+      tab: 'KYC Details',
+      component: <KycDetails {...{ userProfileData }} />,
+    },
+    {
+      tab: 'Change Password',
+      component: <ChangePassword {...{ userProfileData }} />,
+    },
+  ];
 
   return (
-    <section className='tabs-wrapper'>
-      <div className="tabs">
-        <div ref={tabsHeader} className="tab-header">
-          <div className="active">
-              Basic Details
-          </div>
-          <div>
-              Transactions
-          </div>
-          <div>
-              KYC Verification
-          </div>
-          <div>
-              Change Password
-          </div>
-        </div>
-        <div ref={tabIndicator} className="tab-indicator"></div>
-        <div ref={tabsContent} className="tab-content">
-          <div className="active each-tab-content">
-            <BasicDetails {...{ userProfileData, isLoading, isError, error }} />
-          </div>
-          <div className='each-tab-content'>
-            <Transactions {...{ userProfileData }} />
-          </div>
-          <div className='each-tab-content'>
-            <KycDetails {...{ userProfileData }} />
-          </div>
-          <div className='each-tab-content'>
-            <ChangePassword {...{ userProfileData }} />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+    <Tab.Group as='section' onChange={handleTabSwitch} className='profile-tabs-wrapper'>
+      <Tab.List className='tabs-header-wrapper flex justify-center'>
+        {userProfileSections.map(({ tab }, index) => (
+          <Tab key={index}>
+            <div className={`each-tab-header ${index === selectedTab ? 'active-tab' : null}`}>
+              {tab} </div>
+          </Tab>
+        ))}
+      </Tab.List>
+      <br /> <br />
+      <Tab.Panels className='tabs-panels-wrapper'>
+        {userProfileSections.map(({ component }, index) => (
+          <Tab.Panel key={index}>
+            {component}
+          </Tab.Panel>
+        ))}
+      </Tab.Panels>
+    </Tab.Group>
+  );
 };
 
 export default Tabsa;
