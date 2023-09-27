@@ -18,7 +18,7 @@ function TransactionTable({ transactionRecords }) {
         columnHelper.accessor('timestamp', {
             id: 'timestamp',
             cell: info => <span className='px-2'>{convertTimestamp(info.getValue())}</span>,
-            header: () => <span className='px-2 underline'>Timestamp</span>,
+            header: () => <span className='px-2 underline'>Date</span>,
         }),
         columnHelper.accessor('txn_id', {
             id: 'txn_id',

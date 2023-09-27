@@ -6,11 +6,11 @@
     width: 100%;
     width: 300px;
     height: 60px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    background-color: #6a6a6a;
+    background-color: #af7728;
     color: #fff;
 }
 
@@ -27,8 +27,8 @@
 }
 
 .transactionTable .table-wrapper table {
-    background: rgba(0, 0, 0, 0.273);
-    color: #000;
+    background: rgb(25, 25, 25);
+    color: #e4e4e4;
     width: 100%;
     border-collapse: collapse;
     overflow: scroll;
@@ -40,7 +40,8 @@
 }
 
 .transactionTable .table-wrapper table th {
-    background-color: #000;
+    font-weight: 400;
+    background-color: #b4a62e;
     color: #fff;
 }
 
@@ -55,10 +56,10 @@
     min-width: 140px;
 }
 
-.transactionTable .table-wrapper tr:nth-child(odd) {
+/* .transactionTable .table-wrapper tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.773);
     color: #000;
-}
+} */
 
 .transaction-cards-wrapper {
     max-width: 100%;

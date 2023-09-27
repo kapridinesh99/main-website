@@ -63,9 +63,15 @@ function ChangePassword() {
     };
 
     return (
-        <article className='flex column gap-l'>
-            {
-                Object.entries(formState.formData ?? {})
+        <article className='change-password-page flex column gap-l'>
+            <header>
+                <h1>Security</h1>
+                <p>Update your password here</p>
+            </header>
+            <br /> 
+            <main className='flex column gap-xl'>
+                {
+                    Object.entries(formState.formData ?? {})
                     .map((entry, index) => (entry &&
                         <EachField
                             key={index}
@@ -76,18 +82,20 @@ function ChangePassword() {
                                 editableFields: Object.keys(userKYCData),
                                 isEditable: formState.isEditable
                             }} />
-                    ))}
+                    ))
+                }
+            </main>
             <br />
-            <div className='flex align-center space-between'>
+            <footer className='flex align-center gap-5xl'>
                 {
                     <button className='edit-btn' onClick={enableEdit}>{formState.isEditable ? 'Revert' : 'Edit'}</button>
                 }
                 {
                     _isLoading
-                    ? <Loader />
-                    : formState.isEditable && (<button type='submit' className='save-btn' onClick={saveDetails}>Save</button>)
+                        ? <Loader />
+                        : formState.isEditable && (<button type='submit' className='save-btn' onClick={saveDetails}>Save</button>)
                 }
-            </div>
+            </footer>
         </article>
     );
 };

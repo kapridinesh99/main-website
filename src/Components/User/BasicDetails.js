@@ -5,6 +5,7 @@ import { editUserProfile } from '../../Functions/user';
 import { editableFields, blackListedFields } from './util';
 import Loader from '../Loader';
 import './User.css';
+import { defaultProfileUrl } from '../../Functions/constants';
 
 function BasicDetails({ userProfileData, isLoading }) {
   const [formState, setFormState] = useState({
@@ -14,11 +15,11 @@ function BasicDetails({ userProfileData, isLoading }) {
 
   const editUserProfileMutation = useMutation(editUserProfile);
   const { isLoading: _isLoading } = editUserProfileMutation;
-  
+
   useEffect(() => {
     setFormState((prevState) => ({
       ...prevState,
-      formData: {...userProfileData},
+      formData: { ...userProfileData },
     }));
   }, [userProfileData]);
 
@@ -33,7 +34,7 @@ function BasicDetails({ userProfileData, isLoading }) {
   };
 
   const saveDetails = () => {
-    const {userID} = getCredentials();
+    const { userID } = getCredentials();
     const alteredKeys = {
       firstName: formState.formData['first_name'],
       lastName: formState.formData['last_name'],
@@ -62,26 +63,37 @@ function BasicDetails({ userProfileData, isLoading }) {
 
   return (
     <article className='flex column gap-l'>
-      { isLoading
+      {isLoading
         ? <Loader />
-        : Object.entries(formState.formData ?? {})
-          .map((entry, index) => (entry &&
-            <EachField
-              key={index}
-              {...{
-                entry,
-                editableFields,
-                blackListedFields,
-                onChange: handleEditField,
-                isEditable: formState.isEditable
-              }} />
-          )) }
+        : (
+          <div className='basic-details'>
+            <header>
+              <h1>Personal Information</h1>
+              <p>Update your information here</p>
+            </header>
+            <br /> <br />
+            <main className='flex column gap-xl'>
+              {Object.entries(formState.formData ?? {})
+                .map((entry, index) => (entry &&
+                  <EachField
+                    key={index}
+                    {...{
+                      entry,
+                      editableFields,
+                      blackListedFields,
+                      onChange: handleEditField,
+                      isEditable: formState.isEditable
+                    }} />
+                ))}
+            </main>
+          </div>
+        )}
       <br />
-      <div className='flex align-center space-between'>
+      <div className='flex align-center gap-5xl'>
         <button className='edit-btn' onClick={enableEdit}>{formState.isEditable ? 'Revert' : 'Edit'}</button>
-        {  _isLoading 
-          ? <Loader /> 
-          : formState.isEditable && (<button type='submit' className='save-btn' onClick={saveDetails}>Save</button>) 
+        {_isLoading
+          ? <Loader />
+          : formState.isEditable && (<button type='submit' className='save-btn' onClick={saveDetails}>Save</button>)
         }
       </div>
     </article>
